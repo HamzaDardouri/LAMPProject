@@ -1,41 +1,23 @@
-# LAMPProject
-Un projet simple d'application (login,mot de passe,profile) pour administrer des serveures d'application
+# LAMPProject-All-In-One-VM
 
-Pour Faire un clonage il sufit de taper:
 
-git clone https://github.com/HamzaDardouri/SecureLogin.git
+Tou d'abord,On ouvre la machine (Apache+PHP+Mysql),
 
-N.B: En supposant que tu fait le clonage dans votre répertoire personnelle.
+Connectez-vous sur les 2 machines. Notre configuration au niveau adresses IP est la suivante: VM(Apache+PHP):
 
-Pour faire le déploiement:
+Après,tu dois cloner ce projet sur votre machine serveur (Apache+PHP) en utilisant cette commande:
 
-sudo cp -r SecureLogin /var/www/html/
+git clone https://github.com/HamzaDardouri/SecureLoginLamp_2tiers.git
 
-Tu peut créer la base en tapant en mysql:
+Puis,tu dois déplacer les 2 fichiers .sh (bash script file) sur votre dossier personnelle ~ ou /home/<nom_user>
 
-create database login;
+mv ~/SecureLoginLamp_2tiers/deployer.sh ~/SecureLoginLamp_2tiers/deployer2.sh ~/
 
-Puis, on crée une table en tapant:
+On passe vers l'execution: Rendre le fichier deployer.sh exécutable à travers cette commande (votre répertoire personnelle sur la machine (Apache+PHP)): chmod +x deployer.sh
 
-CREATE TABLE IF NOT EXISTS `accounts` (
+Enfin, Exécutez cette fichier à travers cette commande:
 
-    -> `id` int(11) NOT NULL AUTO_INCREMENT,
-    
-    ->   `username` varchar(50) NOT NULL,
-    
-    ->   `password` varchar(255) NOT NULL,
-    
-    ->   `email` varchar(100) NOT NULL,
-    
-    ->     PRIMARY KEY (`id`)
-    
-    -> ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-    
-Tu peut aussi insérer queleques lignes en tapant:
-
-insert into accounts (id,username,password,email) values (1,'test','123456','test@test.com');
-
-insert into accounts (id,username,password,email) values (2,'hamza','hamza','hamza@admsrv.com');
+./deployer.sh
 
 
 
