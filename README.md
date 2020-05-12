@@ -4,6 +4,8 @@
 Tou d'abord,On ouvre la machine (Apache+PHP+Mysql),
 
 Connectez-vous sur la machine. Notre configuration au niveau adresses IP est la suivante: 
+
+
 VM(Apache+PHP+Mysql): 192.168.56.20
 
 Après,tu dois cloner ce projet sur votre machine serveur (Apache+PHP+Mysql) en utilisant cette commande:
@@ -14,11 +16,15 @@ Puis,tu dois déplacer le fichier .sh (bash script file) sur votre dossier perso
 
 mv ~/SecureLogin/deployer.sh   ~/
 
-On passe vers l'execution: Rendre le fichier deployer.sh exécutable à travers cette commande (votre répertoire personnelle): chmod +x deployer.sh
+On passe vers l'execution: Rendre le fichier deployer.sh exécutable à travers cette commande (votre répertoire personnelle):
+
+chmod +x deployer.sh
 
 Enfin, Exécutez cette fichier à travers cette commande:
 
 ./deployer.sh
+
+
 Pour tester :ouvrez ton navigateur et saisissez cette lien: http://192.168.56.20/SecureLogin 
 
 Tapez comme username soit test ou hamza et comme mot de passe soit 123456 ou hamza(par défaut).
